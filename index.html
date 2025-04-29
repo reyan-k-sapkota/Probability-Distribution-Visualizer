@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Probability Distribution</title>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <h1 class="text-3xl font-bold text-center mt-10 mb-6 px-4"> Probability Distribution</h1>
+        <div id="chart-main" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-64 sm:h-screen flex items-center justify-center">
+            <canvas id="chart" class="w-full h-full" style="border:3px solid red"></canvas>
+        </div>
+
+        <div class = "flex items-center justify-center mt-10">
+            <h2 class = "text-2xl font-bold mt-10 mb-6 px-4">Instructions</h2>
+        
+        </div>
+
+        <div class = "flex items-center justify-center">
+            <p class = "font-italics px-2">a. Choose the number till which you want to generate the random values. </p>
+        </div>
+
+        <div class = "flex items-center justify-center">
+            <p class = "font-italics px-2">b. Choose for how many times do you want to repeat the experiment (i.e, how many times would you like to draw the random numbers?). </p>
+        </div>
+
+        <div class = "flex items-center justify-center mt-10">
+            <label for = "ranNum" class = "ml-20"> Random Numbers from 1 to __?</label>
+            <input type = "range" min = "1" max = "1000" value = "10" id = "ranNum" class = "ml-0 border border-black-300"
+            oninput = "document.getElementById('ranNumVal').innerHTML = this.value; ">
+            <span id = "ranNumVal">10</span>
+
+            
+            <label for = "trials" class = "ml-20"> Number of trials</label>
+            <input type = "range" min = "1" max = "1000" value = "10" id = "trials" class = "ml-0 border border-black-300"
+            oninput = "document.getElementById('trialsVal').innerHTML = this.value; do_trials (this.value); save_value(); update_graph (use_value(), this.value, document.getElementById('ranNum').value)">
+            <span id = "trialsVal">10</span>
+        </div>
+
+        <div class = " flex items-center justify-center mt-10">
+            
+            <button type = "button" 
+            class = "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium w-60 h-10 rounded" 
+            id = "button1" onclick = "">Values are shown below</button>
+        </div> 
+
+        <div class = " flex flex-col items-center justify-center mt-0">
+            <p class = "font-bold text-1xl"> The values generated are:  </p> <p id ="display_values" class = "break-words text-center max-w-screen w-full overflow-x-auto whitespace-normal px-20" > </p>
+            <p class = "font-bold text-1xl"> The frequencies of generated values are:  </p> <p id ="display_freq" class = "text-center justify-center ml-20 mr-20 " > </p>
+            <p class = "font-bold text-1xl"> The probabilities of generated values are:  </p> <p id ="display_prob" class = "break-words text-center max-w-screen w-full overflow-x-auto whitespace-normal px-20" > </p>
+            <p class = "font-bold text-1xl"> The plot values are:  </p> <p id ="display_pd" class = "text-center justify-center ml-20 mr-20" > </p>
+            <p class = "font-bold text-1xl"> The sum of all probabilities is:  </p> <p id ="display_sum" class = "text-center justify-center ml-20 mr-20" > </p>
+        </div>
+    </div>
+
+    
+
+<footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-blue-700">
+    <div class="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center justify-center gap-5">
+      <span class="text-sm text-white-700 sm:text-center dark:text-white-400">© 2025 <a href="https://github.com/reyan-k-sapkota" class="hover:underline">Reyan Kumar Sapkota</a>. 
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white-500 text-white-400 sm:mt-0">
+        <li>
+            <a href="https://github.com/reyan-k-sapkota" class="hover:underline me-4 md:me-6" target = "_blank">Github</a>
+        </li>
+        <li>
+            <a href="https://linkedin.com/in/reyan-k-sapkota/" class="hover:underline me-4 md:me-6" target = "_blank">Linkedin</a>
+        </li>
+        <li>
+            <a href="https://instagram.com/reyan.k.sapkota/" class="hover:underline me-4 md:me-6" target = "_blank">Instagram</a>
+        </li>
+        <li>
+            <a href="mailto:reyansapkota.108@gmail.com" class="hover:underline">Email</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+
+    <script src = "canvas.js"></script>
+
+</body>
+</html>
